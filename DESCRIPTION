@@ -4,7 +4,8 @@ Title: Businss Statistics Practice
 Version: 0.1.0
 Author: Kilhwan Kim
 Maintainer: The package maintainer <khkim@smu.ac.kr>
-Description: This package is aimed at providing a set of data for the business statistics practice course 
+Description: This package is aimed at providing a set of data and tutorials 
+  for the business statistics practice course 
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
