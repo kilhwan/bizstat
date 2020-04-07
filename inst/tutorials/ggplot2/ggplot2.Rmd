@@ -8,7 +8,19 @@ runtime: shiny_prerendered
 library(learnr)
 library(tidyverse)
 library(bizstatp)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, exercise.checker = function(
+    label,
+    user_code,
+    solution_code,
+    check_code,
+    envir_result,
+    evaluate_result,
+    envir_prep,
+    ...
+  ) {
+    list(message = "Great job!", correct = TRUE, location = "append")
+  } 
+)
 ```
 
 
@@ -23,11 +35,11 @@ course
 1. `course` 데이터의 `mid`를 가록축으로 `final`을 세로축으로 하여 산점도를 그리시오. 
 
 ```{r mapping1, exercise=TRUE}
-ggplot() + geom_point(mapping=aes(x=..., y=...), data=...)
+ggplot() + geom_point(mapping = aes(x = ..., y = ...), data = ...)
 ```
 
 ```{r mapping1-solution}
-ggplot() + geom_point(mapping=aes(x=mid, y=final), data=course)
+ggplot() + geom_point(mapping = aes(x = mid, y = final), data = course)
 ```
 
 2. `course` 데이터의 `hw`를 가록축으로 `scroe`을 세로축으로 하여 산점도를 그리시오. 
@@ -37,27 +49,28 @@ ggplot() + geom_point(..., ...)
 ```
 
 ```{r mapping2-solution}
-ggplot() + geom_point(mapping=aes(x=hw, y=score), data=course)
+ggplot() + geom_point(mapping = aes(x = hw, y = score), data = course)
 ```
 
 3. `course` 데이터의 `mid`를 가록축으로 `final`을 세로축으로 하여 산점도를 그리시오. 단, 성별(`gender`)에 따라 점의 색상을 다르게 표시하시오.  
 
 ```{r mapping3, exercise=TRUE}
-ggplot() + geom_point(mapping=aes(x=..., y=..., color=...), data=...)
+ggplot() + geom_point(mapping = aes(x = ..., y = ..., color = ...), data = ...)
 ```
 
 ```{r mapping3-solution}
-ggplot() + geom_point(mapping=aes(x=mid, y=final, color=gender), data=course)
+ggplot() + geom_point(mapping = aes(x = mid, y = final, color = gender), data = course)
 ```
 
 4. `course` 데이터의 `mid`를 가록축으로 `final`을 세로축으로 하여 산점도를 그리시오. 단, 학년(`year`)에 따라 점의 색상과 모양을 다르게 표시하시오.  
 
 ```{r mapping4, exercise=TRUE}
-ggplot() + geom_point(..., data=...)
+ggplot() + geom_point(..., ...)
 ```
 
 ```{r mapping4-solution}
-ggplot() + geom_point(mapping=aes(x=mid, y=final, color=year, shape=year), data=course)
+ggplot() + 
+  geom_point(mapping = aes(x = mid, y = final, color = year, shape = year), data = course)
 ```
 
 
@@ -66,31 +79,232 @@ ggplot() + geom_point(mapping=aes(x=mid, y=final, color=year, shape=year), data=
 1. `course` 데이터의 `mid`를 가록축으로 `final`을 세로축으로 하여 산점도를 그리시오. 단, 점의 색이 데이터 값에 상관없이 모두 orange 색이 되도록 하시오. 
 
 ```{r setting1, exercise=TRUE}
-ggplot() + geom_point(mapping=aes(x=..., y=...), data=..., color=...)
+ggplot() + geom_point(mapping = aes(x = ..., y = ...), data = ..., color = ...)
 ```
 
 ```{r setting1-solution}
-ggplot() + geom_point(mapping=aes(x=mid, y=final), data=course, color="orange")
+ggplot() + geom_point(mapping = aes(x = mid, y = final), data = course, color = "orange")
 ```
 
 2. `course` 데이터의 `mid`를 가록축으로 `final`을 세로축으로 하여 산점도를 그리시오. 단, 점의 색이 데이터 값에 상관없이 모두 파란색이 되도록 하시오. 그리고 점의 크기를 기본 크기보다 3배 키우시오.  
 
 ```{r setting2, exercise=TRUE}
-ggplot() + geom_point(mapping=aes(x=..., y=...), data=..., ..., ...)
+ggplot() + geom_point(mapping = ..., data = ..., color = ..., size = ...)
 ```
 
 ```{r setting2-solution}
-ggplot() + geom_point(mapping=aes(x=mid, y=final), data=course, color="blue", size=3)
+ggplot() + geom_point(mapping = aes(x = mid, y = final), data = course, 
+                      color = "blue", size = 3)
 ```
 
 ## `group` 속성
 
 ## 측면으로 나누어 그리기
 
+1. `course` 데이터의 `mid`를 가록축, `final`을 세로축으로 산점도를 그린다. 단, `gender`를 기준으로 측면으로 나누어 별도의 그래프로 그려지도록 하시오.
+
+```{r facet1, exercise=TRUE, exercise.lines = 6}
+ggplot() + 
+  geom_point(mapping = aes(x = ..., y = ...), data = ...) +
+  facet_wrap(~ ...)
+```
+
+```{r facet1-solution}
+ggplot() + 
+  geom_point(mapping=aes(x=mid, y=final), data=course) +
+  facet_wrap(~ gender)
+```
+
+2. `course` 데이터의 `mid`를 가록축, `final`을 세로축으로 산점도를 그린다. 단, `gender`와 `class`를 기준으로 측면으로 나누어 별도의 그래프로 그려지도록 하시오. `gender`를 행으로, `class`를 열로 그래프를 배치하시오.
+
+```{r facet2, exercise=TRUE, exercise.lines = 6}
+ggplot() + 
+  geom_point(mapping = aes(x = ..., y = ...), data = ...) +
+  facet_gid(... ~ ...)
+```
+
+```{r facet2-solution}
+ggplot() + 
+  geom_point(mapping = aes(x = mid, y = final), data = course) +
+  facet_grid(gender ~ class)
+```
+
+
 ## 그래프 계층(layers)과 도형(geoms)
+
+1. `course` 데이터에서 `mid`를 가로축, `final`을 세로축으로 하여 산점도와 추세선을 한 그래프에 겹쳐서 표현하시오.
+
+```{r layer1, exercise=TRUE, exercise.lines = 6}
+ggplot() + 
+  geom_point(mapping = aes(x = ..., y = ...), data = ...) +
+  geom_smooth(mapping = aes(x = ..., y = ...), data = ...) 
+```
+
+```{r layer1-solution}
+ggplot() + 
+  geom_point(mapping = aes(x = mid, y = final), data = course) +
+  geom_smooth(mapping = aes(x = mid, y = final), data = course) 
+```
+
+2. 1번 문제에서 공통된 데이터와 매핑을 `ggplot()` 함수로 옮겨 실행해 보시오.
+
+```{r layer2, exercise=TRUE, exercise.lines = 6}
+ggplot(data = ..., mapping = ...) + 
+  geom_point() +
+  geom_smooth() 
+```
+
+```{r layer2-solution}
+ggplot(data = course, mapping=aes(x = mid, y = final)) + 
+  geom_point() +
+  geom_smooth() 
+```
+
+3. 2번 문제에서 `gender`에 따라 점과 추세선의 색이 다르게 표현해 보시오.  
+
+```{r layer3, exercise=TRUE, exercise.lines = 6}
+ggplot(data = ..., mapping = aes(x = ..., y = ..., color = ...)) + 
+  geom_point() +
+  geom_smooth() 
+```
+
+```{r layer3-solution}
+ggplot(data = course, mapping=aes(x = mid, y = final, color = gender)) + 
+  geom_point() +
+  geom_smooth() 
+```
+
+4. 3번 문제에서 `ggplot()`, `aes()`의 첫번째, 두번째 인수의 이름을 제외해도 잘 실행되는 것을 확인해 보시오. 
+
+```{r layer4, exercise=TRUE, exercise.lines = 6}
+ggplot(..., aes(..., ..., color = ...)) + 
+  geom_point() +
+  geom_smooth() 
+```
+
+```{r layer4-solution}
+ggplot(course, aes(mid, final, color = gender)) + 
+  geom_point() +
+  geom_smooth() 
+```
+
+5. 4번 문제에서 점은 `gender`에 따르게 다른 색상이 되게 하지만, 추세선은 모든 데이터에 대하여 공통의 추세선 하나만 그려보시오. 4번과 5번 결과를 비교하여 각 geom 함수에 매핑을 하면 해당 그래프 층에만 영향을 주는 것을 확인하시오. 
+
+```{r layer5, exercise=TRUE, exercise.lines = 6}
+ggplot(..., aes(..., ...)) + 
+  geom_point(aes(color = ...)) +
+  geom_smooth() 
+```
+
+```{r layer5-solution}
+ggplot(course, aes(mid, final)) + 
+  geom_point(aes(color = gender)) +
+  geom_smooth() 
+```
+
+6. `course` 데이터에서 `mid`와 `final` 모두 90점 이상인 학생의 데이터를 뽑아보시오.
+
+```{r layer6, exercise=TRUE}
+filter(course, ... >= ..., ... >= ...)
+```
+
+```{r layer6-solution}
+filter(course, mid >= 90, final >= 90)
+```
+
+7. 5번 문제의 그래프에서 6번 문제의 결과를 사용하여 `mid`와 `final`이 모두 90 점 이상인 학생을 표시하는 점을 모두 orange 색으로 크기 3이 되도록 표시해 보시오. 
+
+```{r layer7, exercise=TRUE, exercise.lines = 6}
+ggplot(..., aes(..., ...)) + 
+  geom_point(aes(color = ...)) +
+  geom_smooth() +
+  geom_point(data = ..., color = ..., size = ...)
+```
+
+```{r layer7-solution}
+ggplot(course, aes(mid, final)) + 
+  geom_point(aes(color = gender)) +
+  geom_smooth() +
+  geom_point(data = filter(course, mid >= 90, final >= 90), color = "orange", size = 3)
+```
+
 
 ## 통계 요약 그래프
 
+1. `course` 데이터에서 `year` 열에 대한 절대 빈도를 막대그래프로 그려보시오. 
+
+```{r stat1, exercise = TRUE}
+ggplot(...) + geom_bar(aes(...))
+```
+
+```{r stat1-solution}
+ggplot(course) + geom_bar(aes(year))
+```
+
+2. `course` 데이터에서 `year` 열에 대한 상대 빈도를 막대그래프로 그려보시오. 
+
+```{r stat2, exercise = TRUE}
+ggplot(...) + geom_bar(aes(..., ..., group = 1))
+```
+
+```{r stat2-solution}
+ggplot(course) + geom_bar(aes(year, ..prop.., group = 1))
+```
+
+3. `course` 데이터에서 `score` 열에 대한 히스토그램을 그려보시오. 
+
+```{r stat3, exercise = TRUE}
+ggplot(...) + geom_histogram(aes(...))
+```
+
+```{r stat3-solution}
+ggplot(course) + geom_histogram(aes(score))
+```
+
+4. `course` 데이터에서 `score` 열에 대한 히스토그램을 그려보시오. 단, 구간의 넓이가 10점이 되도록 하시오.
+
+```{r stat4, exercise = TRUE}
+ggplot(...) + geom_histogram(aes(...), binwidth = ...)
+```
+
+```{r stat4-solution}
+ggplot(course) + geom_histogram(aes(score), binwidth = 10)
+```
+
+
 ## 위치 조정
+
+1. `course` 데이터에서 `year` 열에 대한 빈도를 막대그래프로 그리는데, `gender` 별로 구별되는 색상으로 막대그래프가 층으로 쌓이도록 그려보시오. 
+
+```{r position1, exercise = TRUE}
+ggplot(...) + geom_bar(aes(..., ... = ...))
+```
+
+```{r position1-solution}
+ggplot(course) + geom_bar(aes(year, fill = gender))
+```
+
+2. `course` 데이터에서 `year` 열에 대한 빈도를 막대그래프로 그리는데, `gender` 별로 구별되는 색상으로 막대그래프가 나란히 그려보시오. 
+
+```{r position2, exercise = TRUE}
+ggplot(...) + geom_bar(aes(..., ... = ...), position = ...)
+```
+
+```{r position2-solution}
+ggplot(course) + geom_bar(aes(year, fill = gender), position = "dodge")
+```
+
+3. `course` 데이터에서 `year` 열에 대한 막대그래프로 그리는데, `gender` 별로 구별되는 색상으로 막대그래프를 그리고, `year` 별로는 막대 길이가 1이 되도록 하여 학년별 성별 차이를 확인할 수 있도록 그리시오.  
+
+```{r position3, exercise = TRUE}
+ggplot(...) + geom_bar(aes(..., ... = ...), position = ...)
+```
+
+```{r position3-solution}
+ggplot(course) + geom_bar(aes(year, fill = gender), position = "fill")
+```
+
+
+
 
 

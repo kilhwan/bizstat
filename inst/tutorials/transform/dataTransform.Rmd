@@ -4,7 +4,7 @@ output: learnr::tutorial
 runtime: shiny_prerendered
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include = FALSE}
 library(learnr)
 library(tidyverse)
 library(bizstatp)
@@ -22,7 +22,7 @@ course
 
 1. 다음 명령을 수정하여 `course` 데이터 중 학년(`year`)이 2학년인 데이터만 추출해 보시오.:
 
-```{r filter1, exercise=TRUE}
+```{r filter1, exercise = TRUE}
 filter(course, year == 4)
 ```
 
@@ -32,8 +32,8 @@ filter(course, year == 2)
 
 2. `course` 데이터 중 성별(`gender`)이 여학생(`F`)인 데이터만 추출해 보시오.:
 
-```{r filter2, exercise=TRUE}
-filter(course, ...)
+```{r filter2, exercise = TRUE}
+filter(course, ... == ...)
 ```
 
 ```{r filter2-solution}
@@ -43,8 +43,8 @@ filter(course, gender == 'F')
 
 3. `course` 데이터 중 중간고사(`mid`)이 80 점 이상(80점 포함)인 데이터만 추출해 보시오.:
 
-```{r filter3, exercise=TRUE}
-filter(course, ...)
+```{r filter3, exercise = TRUE}
+filter(course, ... >= ...)
 ```
 
 ```{r filter3-solution}
@@ -54,7 +54,7 @@ filter(course, mid >= 80)
 
 4. `course` 데이터 중 성별(`gender`)가 여학생이고, 중간고사 점수(`mid`)가 80 점 이상인 데이터만 추출해 보시오.:
 
-```{r filter4, exercise=TRUE}
+```{r filter4, exercise = TRUE}
 filter(course, ..., ...)
 ```
 
@@ -64,7 +64,7 @@ filter(course, gender == 'F', mid >= 80)
 
 5. `course` 데이터 중 학년(`year`)이 4학년이거나 중간고사 점수(`mid`)가 90 점 이상인 데이터만 추출해 보시오.:
 
-```{r filter5, exercise=TRUE}
+```{r filter5, exercise = TRUE}
 filter(course, ... | ...)
 ```
 
@@ -77,7 +77,7 @@ filter(course, year == 4 | mid >= 90)
 
 1. `course` 데이터를 중간고사 점수(`mid`)가 낮은 학생에서 높은 학생 순으로 정렬해 보시오.:
 
-```{r arrange1, exercise=TRUE}
+```{r arrange1, exercise = TRUE}
 arrange(course, ...)
 ```
 
@@ -87,8 +87,8 @@ arrange(course, mid)
 
 2. `course` 데이터를 중간고사 점수(`mid`)가 높은 학생에서 낮은 학생 순으로 정렬해 보시오.:
 
-```{r arrange2, exercise=TRUE}
-arrange(course, ...)
+```{r arrange2, exercise = TRUE}
+arrange(course, desc(...))
 ```
 
 ```{r arrange2-solution}
@@ -97,7 +97,7 @@ arrange(course, desc(mid))
 
 3. `course` 데이터를 학년(`year`)이 낮은 학생에서 높은 학생 순으로 정렬하시오. 단, 학년이 같은 학생은  중간고사(`mid`)가 낮은 학생에서 높은 학생 순으로 정렬한다.:
 
-```{r arrange3, exercise=TRUE}
+```{r arrange3, exercise = TRUE}
 arrange(course, ..., ...)
 ```
 
@@ -107,8 +107,8 @@ arrange(course, year, mid)
 
 3. `course` 데이터를 학년(`year`)이 낮은 학생에서 높은 학생 순으로 정렬하시오. 단, 이번에는 학년이 같은 학생은 중간고사 점수(`mid`)가 높은 학생에서 낮은 학생 순으로 정렬한다.:
 
-```{r arrange4, exercise=TRUE}
-arrange(course, ..., ...)
+```{r arrange4, exercise = TRUE}
+arrange(course, ..., desc(...))
 ```
 
 ```{r arrange4-solution}
@@ -120,7 +120,7 @@ arrange(course, year, desc(mid))
 
 1. `course` 데이터에서 학년(`year`), 중간고사 점수(`mid`) 열만 뽑아보시오.  
 
-```{r select1, exercise=TRUE}
+```{r select1, exercise = TRUE}
 select(course, ..., ...)
 ```
 
@@ -130,8 +130,8 @@ select(course, year, mid)
 
 2. `course` 데이터에서 학년(`year`), 중간고사 점수(`mid`) 열만 뺀 나머지 열을 뽑아보시오.  
 
-```{r select2, exercise=TRUE}
-select(course, ..., ...)
+```{r select2, exercise = TRUE}
+select(course, -..., -...)
 ```
 
 ```{r select2-solution}
@@ -140,8 +140,8 @@ select(course, -year, -mid)
 
 3. `course` 데이터에서 중간고사 점수(`mid`)에서 총점(`score`) 열까지를 뽑아보시오.  
 
-```{r select3, exercise=TRUE}
-select(course, ...)
+```{r select3, exercise = TRUE}
+select(course, ...:...)
 ```
 
 ```{r select3-solution}
@@ -150,8 +150,8 @@ select(course, mid:score)
 
 4. `course` 데이터에서 중간고사 점수(`mid`)에서 숙제(`hw`) 열까지를 제외하고 다른 열을 뽑아보시오.  
 
-```{r select4, exercise=TRUE}
-select(course, ...)
+```{r select4, exercise = TRUE}
+select(course, -(...:...))
 ```
 
 ```{r select4-solution}
@@ -163,8 +163,8 @@ select(course, -(mid:hw))
 
 1. `course`에서 기말고사(`final`) 점수에서 중간고사(`mid`) 점수를 뺀 값을 계산하여  `course` 데이터에 향상도(`improv`) 열로 추가해 보시오. 
 
-```{r mutate1, exercise=TRUE}
-mutate(course, ...)
+```{r mutate1, exercise = TRUE}
+mutate(course, ... = ...)
 ```
 
 ```{r mutate1-solution}
@@ -173,12 +173,12 @@ mutate(course, improv = final - mid)
 
 2. `course` 데이터에서 총점(`score`)가 80점 이상이면 A, 80점 미만이면 B로 하여 성적을 부여하고자 한다. `ifelse()` 함수를 사용하여 성적(`grade`) 열을 추가해 보시오. `ifelse(조건, 결과1, 결과2)` 함수는 '조건'이 성립하면, 결과1이 그렇지 않으면 결과2가 출력되는 함수이다. 
 
-```{r mutate2, exercise=TRUE}
-mutate(course, grade=ifelse(..., ..., ...))
+```{r mutate2, exercise = TRUE}
+mutate(course, grade = ifelse(... > ..., ..., ...))
 ```
 
 ```{r mutate2-solution}
-mutate(course, grade=ifelse(score >= 80, "A", "B"))
+mutate(course, grade = ifelse(score >= 80, "A", "B"))
 ```
 
 
@@ -186,24 +186,24 @@ mutate(course, grade=ifelse(score >= 80, "A", "B"))
 
 1. `course`에서 최종점수(`score`)의 데이터수, 평균과 표준편차를 계산하여 각각 count, mean, sd 열로 요약해 보시오. 
 
-```{r summarize1, exercise=TRUE}
-summarize(course, count=..., mean=..., sd=...)
+```{r summarize1, exercise = TRUE}
+summarize(course, count =..., mean = ..., sd = ...)
 ```
 
 ```{r summarize1-solution}
-summarize(course, count=n(), mean=mean(score), sd=sd(score))
+summarize(course, count = n(), mean = mean(score), sd = sd(score))
 ```
 
 2. `course`에서 성별(`gender`)로 최종점수(`score`)의 데이터수, 평균과 표준편차를 계산하여 각각 count, mean, sd 열로 요약해 보시오. 
 
-```{r summarize2, exercise=TRUE}
+```{r summarize2, exercise = TRUE}
 g <- group_by(course, ...)
-summarize(..., count=..., mean=..., sd=...)
+summarize(..., count = ..., mean = ..., sd = ...)
 ```
 
 ```{r summarize2-solution}
 g <- group_by(course, gender)
-summarize(g, count=n(), mean=mean(score), sd=sd(score))
+summarize(g, count = n(), mean = mean(score), sd = sd(score))
 ```
 
 
@@ -211,38 +211,47 @@ summarize(g, count=n(), mean=mean(score), sd=sd(score))
 
 1. 파이프 연산자(`%>%`)를 사용하여 `course`에서 성별(`gender`)로 최종점수(`score`)의 데이터수, 평균과 표준편차를 계산하여 각각 count, mean, sd 열로 요약해 보시오. 
 
-```{r pipe1, exercise=TRUE}
-course %>% group_by(...) %>% summarize(..., ..., ...)
+```{r pipe1, exercise = TRUE}
+course %>% group_by(...) %>% summarize(... = ..., ... = ..., ... = ...)
 ```
 
 ```{r pipe1-solution}
-course %>% group_by(gender) %>% summarize(count=n(), mean=mean(score), sd=sd(score))
+course %>% group_by(gender) %>% summarize(count = n(), mean = mean(score), sd = sd(score))
 ```
 
 2. 파이프 연산자(`%>%`)를 사용하여 `course`에서 최종점수(`score`)가 85점보다 높은 학생의 데이터를 뽑아서 데이터수, 평균과 표준편차를 계산하여 각각 count, mean, sd 열로 요약해 보시오.
 
-```{r pipe2, exercise=TRUE}
-course %>% filter() %>% summarize(..., ..., ...)
+```{r pipe2, exercise = TRUE}
+course %>% filter(... > ...) %>% summarize(... = ..., ... = ..., ... = ...)
 ```
 
 ```{r pipe2-solution}
-course %>% filter(score > 85) %>% summarize(count=n(), mean=mean(score), sd=sd(score))
+course %>% filter(score > 85) %>% summarize(count = n(), mean = mean(score), sd = sd(score))
 ```
 
-3. 파이프 연산자(`%>%`)를 사용하여 `course`에서 최종점수(`score`)가 85점보다 높은 학생의 데이터를 뽑아서 성별(`gender`)로 데이터수, 평균과 표준편차를 계산하여 각각 count, mean, sd 열로 요약해 보시오. 
+3. 파이프 연산자(`%>%`)를 사용하여 `course`에서 최종점수(`score`)가 85점보다 높은 학생의 데이터를 뽑아 보시오. 
 
-```{r pipe3, exercise=TRUE}
-course %>% 
-  filter(...) %>% 
-  group_by(...) %>%
-  summarize(..., ..., ...)
+```{r pipe3, exercise = TRUE}
+course %>%  filter(... > ...)  
 ```
 
 ```{r pipe3-solution}
+course %>%  filter(score > 85)  
+```
+
+4. 파이프 연산자(`%>%`)를 사용하여 `course`에서 최종점수(`score`)가 85점보다 높은 학생의 데이터를 뽑아서 성별(`gender`)로 데이터수, 평균과 표준편차를 계산하여 각각 count, mean, sd 열로 요약해 보시오. 
+
+```{r pipe4, exercise = TRUE, exercise.lines=6}
+course %>% 
+  filter(... > ...) %>% 
+  group_by(...) %>%
+  summarize(... = ..., ... = ..., ... = ...)
+```
+
+```{r pipe4-solution}
 course %>% 
   filter(score > 85) %>% 
   group_by(gender) %>%
-  summarize(count=n(), mean=mean(score), sd=sd(score))
+  summarize(count = n(), mean = mean(score), sd = sd(score))
 ```
-
 
