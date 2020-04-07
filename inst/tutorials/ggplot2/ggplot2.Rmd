@@ -8,19 +8,7 @@ runtime: shiny_prerendered
 library(learnr)
 library(tidyverse)
 library(bizstatp)
-knitr::opts_chunk$set(echo = FALSE, exercise.checker = function(
-    label,
-    user_code,
-    solution_code,
-    check_code,
-    envir_result,
-    evaluate_result,
-    envir_prep,
-    ...
-  ) {
-    list(message = "Great job!", correct = TRUE, location = "append")
-  } 
-)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 

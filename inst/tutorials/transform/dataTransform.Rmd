@@ -9,7 +9,6 @@ library(learnr)
 library(tidyverse)
 library(bizstatp)
 
-filename <- "/home/sys4ppl/answer.R"
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
