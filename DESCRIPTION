@@ -8,3 +8,5 @@ Description: This package is aimed at providing a set of data for the business s
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Imports:
+  ISLR

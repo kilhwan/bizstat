@@ -1,0 +1,96 @@
+---
+title: "ggplot2 Tutorial"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(bizstatp)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## 데이터와 도형 속성 매핑하기
+
+`course` 데이터를 이용하여 다음 문제를 풀어보시오.
+
+```{r course}
+course
+```
+
+1. `course` 데이터의 `mid`를 가록축으로 `final`을 세로축으로 하여 산점도를 그리시오. 
+
+```{r mapping1, exercise=TRUE}
+ggplot() + geom_point(mapping=aes(x=..., y=...), data=...)
+```
+
+```{r mapping1-solution}
+ggplot() + geom_point(mapping=aes(x=mid, y=final), data=course)
+```
+
+2. `course` 데이터의 `hw`를 가록축으로 `scroe`을 세로축으로 하여 산점도를 그리시오. 
+
+```{r mapping2, exercise=TRUE}
+ggplot() + geom_point(..., ...)
+```
+
+```{r mapping2-solution}
+ggplot() + geom_point(mapping=aes(x=hw, y=score), data=course)
+```
+
+3. `course` 데이터의 `mid`를 가록축으로 `final`을 세로축으로 하여 산점도를 그리시오. 단, 성별(`gender`)에 따라 점의 색상을 다르게 표시하시오.  
+
+```{r mapping3, exercise=TRUE}
+ggplot() + geom_point(mapping=aes(x=..., y=..., color=...), data=...)
+```
+
+```{r mapping3-solution}
+ggplot() + geom_point(mapping=aes(x=mid, y=final, color=gender), data=course)
+```
+
+4. `course` 데이터의 `mid`를 가록축으로 `final`을 세로축으로 하여 산점도를 그리시오. 단, 학년(`year`)에 따라 점의 색상과 모양을 다르게 표시하시오.  
+
+```{r mapping4, exercise=TRUE}
+ggplot() + geom_point(..., data=...)
+```
+
+```{r mapping4-solution}
+ggplot() + geom_point(mapping=aes(x=mid, y=final, color=year, shape=year), data=course)
+```
+
+
+## 도형 속성 인수 설정 
+
+1. `course` 데이터의 `mid`를 가록축으로 `final`을 세로축으로 하여 산점도를 그리시오. 단, 점의 색이 데이터 값에 상관없이 모두 orange 색이 되도록 하시오. 
+
+```{r setting1, exercise=TRUE}
+ggplot() + geom_point(mapping=aes(x=..., y=...), data=..., color=...)
+```
+
+```{r setting1-solution}
+ggplot() + geom_point(mapping=aes(x=mid, y=final), data=course, color="orange")
+```
+
+2. `course` 데이터의 `mid`를 가록축으로 `final`을 세로축으로 하여 산점도를 그리시오. 단, 점의 색이 데이터 값에 상관없이 모두 파란색이 되도록 하시오. 그리고 점의 크기를 기본 크기보다 3배 키우시오.  
+
+```{r setting2, exercise=TRUE}
+ggplot() + geom_point(mapping=aes(x=..., y=...), data=..., ..., ...)
+```
+
+```{r setting2-solution}
+ggplot() + geom_point(mapping=aes(x=mid, y=final), data=course, color="blue", size=3)
+```
+
+## `group` 속성
+
+## 측면으로 나누어 그리기
+
+## 그래프 계층(layers)과 도형(geoms)
+
+## 통계 요약 그래프
+
+## 위치 조정
+
+
