@@ -14,7 +14,7 @@ check_exercise <- function(
   envir_prep,
   ...
 ) {
-  list(message = "답이 저장되었습니다.",
+  list(message = "The answer have been saved.",
        correct = TRUE, location = "append")
 }
 
