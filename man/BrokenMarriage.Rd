@@ -1,5 +1,5 @@
-\name{course}
-\alias{course}
+\name{BrokenMarriage}
+\alias{BrokenMarriage}
 \title{이혼 데이터}
 \usage{
 course

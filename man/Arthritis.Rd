@@ -1,5 +1,5 @@
-\name{course}
-\alias{course}
+\name{Arthritis}
+\alias{Arthritis}
 \title{관절염 임상시험 데이터}
 \usage{
 course
