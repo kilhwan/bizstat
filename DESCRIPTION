@@ -12,4 +12,7 @@ LazyData: true
 Imports:
   ISLR,
   learnr,
-  tidyverse
+  moments,
+  psych,
+  tidyverse,
+  vcd
