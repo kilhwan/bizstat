@@ -7,7 +7,7 @@ variation
 \description{
 김수영 시인의 시, 사랑의 변주곡.
 }
-\format{ 2개의 변수를 가진 9개의 관측치를 가지는 데이터 프레임
+\format{ 2개의 변수를 가진 61개의 관측치를 가지는 데이터 프레임
   \describe{
     \item{author}{저자}
     \item{title}{제목}
