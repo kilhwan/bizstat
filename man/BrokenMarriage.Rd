@@ -1,6 +1,6 @@
 \name{BrokenMarriage}
 \alias{BrokenMarriage}
-\title{이혼 데이터}
+\title{Broken Marriage Data}
 \usage{
 BrokenMarriage
 }

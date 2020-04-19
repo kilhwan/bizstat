@@ -1,6 +1,6 @@
 \name{course}
 \alias{course}
-\title{대학 과목을 듣는 수강생에 관한 데이터}
+\title{Course Student Data}
 \usage{
 course
 }

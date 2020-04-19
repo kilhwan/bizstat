@@ -1,6 +1,6 @@
 \name{commencement}
 \alias{commencement}
-\title{Steve Jobs의 스탠포드 대학 졸업식 연설}
+\title{Commencement address by Steve Jobs}
 \usage{
 commencement
 }

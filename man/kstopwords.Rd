@@ -1,6 +1,6 @@
 \name{kstopwords}
 \alias{kstopwords}
-\title{한국어 불용어 사전}
+\title{Korean Stop Words}
 \usage{
 kstopwords
 }

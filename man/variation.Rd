@@ -1,6 +1,6 @@
 \name{variation}
 \alias{variation}
-\title{사랑의 변주곡}
+\title{Poem by Kim Suyung}
 \usage{
 variation
 }

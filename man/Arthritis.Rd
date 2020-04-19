@@ -1,6 +1,6 @@
 \name{Arthritis}
 \alias{Arthritis}
-\title{관절염 임상시험 데이터}
+\title{Arthritis Treatment Data}
 \usage{
 Arthritis
 }
