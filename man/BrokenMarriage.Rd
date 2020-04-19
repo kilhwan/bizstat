@@ -2,7 +2,7 @@
 \alias{BrokenMarriage}
 \title{이혼 데이터}
 \usage{
-course
+BrokenMarriage
 }
 \description{
 덴마크 사회 조사에 수행한 성별 및 사회적 계급에 따른 이혼 또는 영구적 관계가 깨진 빈도를 측정한 데이터이다. 이 데이터는 vcd라는 패키지에 BrokenMarriage라는 이름으로 포함되어 있고 여기서는 교육의 목적으로 같은 이름으로 재수록 하였다.

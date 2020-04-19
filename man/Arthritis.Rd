@@ -2,7 +2,7 @@
 \alias{Arthritis}
 \title{관절염 임상시험 데이터}
 \usage{
-course
+Arthritis
 }
 \description{
 Koch and Edwards(1988)에 의해 새로운 관절염 치료법의 효과를 측정한 데이터이다. 이 데이터는 vcd라는 패키지에 Arthritis라는 이름으로 포함되어 있고 여기서는 교육의 목적으로 같은 이름으로 재수록 하였다.
