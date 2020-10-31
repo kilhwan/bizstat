@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## `filter` 연습 문제
 
-`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R을 이용한 통계 분석](https://kilhwan.github.io/bizstat-book/ch-dataTransformation.html#sec:filter))
+`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R 프로그래밍](https://kilhwan.github.io/rprogramming/ch-dataTransformation.html#sec:filter))
 
 ```{r course}
 course
@@ -76,7 +76,7 @@ filter(course, year == 4 | mid >= 90)
 
 ## `arrange` 연습 문제
 
-`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R을 이용한 통계 분석](https://kilhwan.github.io/bizstat-book/ch-dataTransformation.html#sec:arrange))
+`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R 프로그래밍](https://kilhwan.github.io/rprogramming/ch-dataTransformation.html#sec:arrange))
 
 1. `course` 데이터를 중간고사 점수(`mid`)가 낮은 학생에서 높은 학생 순으로 정렬해 보시오.:
 
@@ -121,7 +121,7 @@ arrange(course, year, desc(mid))
 
 ## `select` 연습 문제
 
-`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R을 이용한 통계 분석](https://kilhwan.github.io/bizstat-book/ch-dataTransformation.html#sec:select))
+`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R 프로그래밍](https://kilhwan.github.io/rprogramming/ch-dataTransformation.html#sec:select))
 
 1. `course` 데이터에서 학년(`year`), 중간고사 점수(`mid`) 열만 뽑아보시오.  
 
@@ -166,7 +166,7 @@ select(course, -(mid:hw))
 
 ## `mutate` 연습 문제
 
-`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R을 이용한 통계 분석](https://kilhwan.github.io/bizstat-book/ch-dataTransformation.html#sec:mutate))
+`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R 프로그래밍](https://kilhwan.github.io/rprogramming/ch-dataTransformation.html#sec:mutate))
 
 1. `course`에서 기말고사(`final`) 점수에서 중간고사(`mid`) 점수를 뺀 값을 계산하여  `course` 데이터에 향상도(`improv`) 열로 추가해 보시오. 
 
@@ -191,7 +191,7 @@ mutate(course, grade = ifelse(score >= 80, "A", "B"))
 
 ## `summarize` 연습 문제
 
-`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R을 이용한 통계 분석](https://kilhwan.github.io/bizstat-book/ch-dataTransformation.html#sec:summarize))
+`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R 프로그래밍](https://kilhwan.github.io/rprogramming/ch-dataTransformation.html#sec:summarize))
 
 1. `course`에서 최종점수(`score`)의 데이터수, 평균과 표준편차를 계산하여 각각 count, mean, sd 열로 요약해 보시오. 
 
@@ -218,7 +218,7 @@ summarize(g, count = n(), mean = mean(score), sd = sd(score))
 
 ## 파이프 연산자 연습 문제
 
-`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R을 이용한 통계 분석](https://kilhwan.github.io/bizstat-book/ch-dataTransformation.html#sec:pipeOperator))
+`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R 프로그래밍](https://kilhwan.github.io/rprogramming/ch-dataTransformation.html#sec:pipeOperator))
 
 1. 파이프 연산자(`%>%`)를 사용하여 `course`에서 성별(`gender`)로 최종점수(`score`)의 데이터수, 평균과 표준편차를 계산하여 각각 count, mean, sd 열로 요약해 보시오. 
 

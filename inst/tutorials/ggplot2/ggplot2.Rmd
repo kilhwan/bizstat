@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## 데이터와 도형 속성 매핑하기
 
-`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R을 이용한 통계 분석](https://kilhwan.github.io/bizstat-book/chap-visulaize.html#sec:getStarted-ggplot2))
+`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R 프로그래밍](https://kilhwan.github.io/rprogramming/chap-visulaize.html#sec:getStarted-ggplot2))
 
 ```{r course}
 course
@@ -64,7 +64,7 @@ ggplot() +
 
 ## 도형 속성 인수 설정 
 
-`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R을 이용한 통계 분석](https://kilhwan.github.io/bizstat-book/chap-visulaize.html#%EB%8F%84%ED%98%95%EC%9D%98-%EC%86%8D%EC%84%B1%EC%97%90-%EB%8C%80%EC%9D%91%EC%8B%9C%ED%82%A4%EA%B8%B0-vs.%EB%8F%84%ED%98%95%EC%9D%98-%EC%86%8D%EC%84%B1-%EC%9D%B8%EC%88%98%EB%A5%BC-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0))
+`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R 프로그래밍](https://kilhwan.github.io/rprogramming/ch-visualization.html#sec:aesMapping))
 
 1. `course` 데이터의 `mid`를 가록축으로 `final`을 세로축으로 하여 산점도를 그리시오. 단, 점의 색이 데이터 값에 상관없이 모두 orange 색이 되도록 하시오. 
 
@@ -90,7 +90,7 @@ ggplot() + geom_point(mapping = aes(x = mid, y = final), data = course,
 
 ## 측면으로 나누어 그리기
 
-`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R을 이용한 통계 분석](https://kilhwan.github.io/bizstat-book/chap-visulaize.html#sec:facets))
+`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R 프로그래밍](https://kilhwan.github.io/rprogramming/chap-visulaize.html#sec:facets))
 
 1. `course` 데이터의 `mid`를 가록축, `final`을 세로축으로 산점도를 그린다. 단, `gender`를 기준으로 측면으로 나누어 별도의 그래프로 그려지도록 하시오.
 
@@ -123,7 +123,7 @@ ggplot() +
 
 ## 그래프 계층(layers)과 도형(geoms)
 
-`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R을 이용한 통계 분석](https://kilhwan.github.io/bizstat-book/chap-visulaize.html#sec:layerAndGeom))
+`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R 프로그래밍](https://kilhwan.github.io/rprogramming/chap-visulaize.html#sec:layerAndGeom))
 
 1. `course` 데이터에서 `mid`를 가로축, `final`을 세로축으로 하여 산점도와 추세선을 한 그래프에 겹쳐서 표현하시오.
 
@@ -224,7 +224,7 @@ ggplot(course, aes(mid, final)) +
 
 ## 통계 요약 그래프
 
-`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R을 이용한 통계 분석](https://kilhwan.github.io/bizstat-book/chap-visulaize.html#sec:ggplotStat))
+`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R 프로그래밍](https://kilhwan.github.io/rprogramming/chap-visulaize.html#sec:ggplotStat))
 
 1. `course` 데이터에서 `year` 열에 대한 절대 빈도를 막대그래프로 그려보시오. 
 
@@ -269,7 +269,7 @@ ggplot(course) + geom_histogram(aes(score), binwidth = 10)
 
 ## 위치 조정
 
-`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R을 이용한 통계 분석](https://kilhwan.github.io/bizstat-book/chap-visulaize.html#sec:position))
+`course` 데이터를 이용하여 다음 문제를 풀어보시오. (참고자료: [R 프로그래밍](https://kilhwan.github.io/rprogramming/chap-visulaize.html#sec:position))
 
 1. `course` 데이터에서 `year` 열에 대한 빈도를 막대그래프로 그리는데, `gender` 별로 구별되는 색상으로 막대그래프가 층으로 쌓이도록 그려보시오. 
 
