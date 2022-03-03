@@ -14,4 +14,5 @@ Imports:
   psych,
   ggplot2,
   vcd,
-  car
+  car,
+  multcomp
