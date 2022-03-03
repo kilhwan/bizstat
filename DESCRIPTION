@@ -1,7 +1,7 @@
 Package: bizstatp
 Type: Package
 Title: Businss Statistics Practice
-Version: 0.1.1
+Version: 0.1.2
 Author: Kilhwan Kim
 Maintainer: The package maintainer <khkim@smu.ac.kr>
 Description: This package is aimed at providing a set of data and tutorials for the Business Statistics Practice course.
@@ -13,4 +13,5 @@ Imports:
   learnr,
   psych,
   ggplot2,
-  vcd
+  vcd,
+  car
